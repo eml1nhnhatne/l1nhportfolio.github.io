@@ -7,13 +7,12 @@
   
     --font-size: 23px;
     --tracking: -0.04;
-  
-    --color: #000000;
-    --backdrop: #F5F5F5;
     color: var(--color);
     background-color: var(--backdrop);
 }
-
+html {
+  scroll-behavior: smooth;
+}
 .cursor {
     position: fixed;
     pointer-events: none;
@@ -30,9 +29,17 @@ body {
     margin: 0;
     width: 100dvw;
     height: 100dvh;
-    overflow-y: hidden;
-  }
-  body.scrim::before {
+    overflow-x: hidden;
+  background-color: #F5F5F5;
+  color: #000000;
+  overflow-y: hidden;
+}
+.dark-mode {
+  background-color:  #000000;
+  color: #F5F5F5;
+}
+
+body.scrim::before {
     position: fixed;
     content: '';
     width:100vw;
@@ -40,8 +47,8 @@ body {
     bottom: 0;
     left: 0;
     z-index: -50;
-  }
-  body::after {
+}
+body::after {
     position: fixed;
     content: '';
     width:100vw;
@@ -54,7 +61,7 @@ body {
     image-rendering: pixelated;
     z-index: -100;
     opacity: .5;
-  }
+}
   .logo-container {
     position: fixed;
     width: 100%;
